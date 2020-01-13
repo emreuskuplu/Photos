@@ -1,0 +1,27 @@
+<!--
+  ~ Copyright 2020 Emre Üsküplü
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Fotolar</string>
+    <string name="grid_view_icon_info">Grid Görünümü</string>
+    <string name="list_view_icon_info">Liste Görünümü</string>
+    <string name="first_fow">Internet baglantısı bulunamadı</string>
+    <string name="second_row">Şu anda çevrim dışı görünüyorsun.</string>
+    <string name="third_row">Mobil veri veya WiFi baglantını</string>
+    <string name="fourth_row">kontrol edip tekrar deneyebilirsin.</string>
+    <string name="try_again_button_text">YENİDEN DENE</string>
+    <string name="error_showing_photo">Foto gösterilirken hata oluştu.</string>
+</resources>
