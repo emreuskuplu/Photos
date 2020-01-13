@@ -15,15 +15,21 @@
   ~    limitations under the License.
   -->
 
-<resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FC5D5D</color>
-    <color name="photoListBackground">#FFFFFF</color>
-    <color name="photoPageBackground">#000000</color>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <color name="colorActive">#FC5D5D</color>
-    <color name="colorDeactivate">#000000</color>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/photo_list_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal" />
 
-    <color name="colorButton">#FC6D6D</color>
-</resources>
+    <ProgressBar
+        android:id="@+id/photo_list_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>

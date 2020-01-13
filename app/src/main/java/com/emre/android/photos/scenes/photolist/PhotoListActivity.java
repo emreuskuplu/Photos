@@ -14,5 +14,19 @@
  *    limitations under the License.
  */
 
-include ':app'
-rootProject.name='Photos'
+package com.emre.android.photos.scenes.photolist;
+
+import androidx.fragment.app.Fragment;
+
+import com.emre.android.photos.scenes.fragmentmanager.PhotoFragmentManager;
+
+/**
+ * @author Emre Üsküplü
+ */
+public class PhotoListActivity extends PhotoFragmentManager {
+
+    @Override
+    public Fragment createFragment() {
+        return PhotoListFragment.newInstance();
+    }
+}

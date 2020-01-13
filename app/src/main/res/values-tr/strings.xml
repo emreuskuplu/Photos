@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright 2020 Emre Üsküplü
   ~
@@ -16,14 +15,13 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FC5D5D</color>
-    <color name="photoListBackground">#FFFFFF</color>
-    <color name="photoPageBackground">#000000</color>
-
-    <color name="colorActive">#FC5D5D</color>
-    <color name="colorDeactivate">#000000</color>
-
-    <color name="colorButton">#FC6D6D</color>
+    <string name="app_name">Fotolar</string>
+    <string name="grid_view_icon_info">Grid Görünümü</string>
+    <string name="list_view_icon_info">Liste Görünümü</string>
+    <string name="first_fow">Internet baglantısı bulunamadı</string>
+    <string name="second_row">Şu anda çevrim dışı görünüyorsun.</string>
+    <string name="third_row">Mobil veri veya WiFi baglantını</string>
+    <string name="fourth_row">kontrol edip tekrar deneyebilirsin.</string>
+    <string name="try_again_button_text">YENİDEN DENE</string>
+    <string name="error_showing_photo">Foto gösterilirken hata oluştu.</string>
 </resources>

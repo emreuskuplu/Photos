@@ -16,14 +16,16 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FC5D5D</color>
-    <color name="photoListBackground">#FFFFFF</color>
-    <color name="photoPageBackground">#000000</color>
+    <!-- TEXT VIEW DIMENSIONS -->
+    <dimen name="action_bar_title_size">20sp</dimen>
+    <dimen name="network_message_size">18sp</dimen>
+    <dimen name="try_again_button_text_size">14sp</dimen>
 
-    <color name="colorActive">#FC5D5D</color>
-    <color name="colorDeactivate">#000000</color>
+    <!-- IMAGE VIEW DIMENSIONS -->
+    <dimen name="item_photo_grid_view_width">115dp</dimen>
+    <dimen name="item_photo_grid_view_height">116dp</dimen>
+    <dimen name="item_photo_list_view_height">236dp</dimen>
 
-    <color name="colorButton">#FC6D6D</color>
+    <!-- BUTTON DIMENSIONS -->
+    <dimen name="try_again_button_width">150dp</dimen>
 </resources>

@@ -14,5 +14,17 @@
  *    limitations under the License.
  */
 
-include ':app'
-rootProject.name='Photos'
+package com.emre.android.photos.scenes.photolist;
+
+import com.emre.android.photos.datatransferobject.PhotoUrlDTO;
+
+import java.util.List;
+
+/**
+ * @author Emre Üsküplü
+ *
+ * It updates photo list
+ */
+public interface IUpdatePhotoUrlList {
+    void updatePhotoUrlList(List<PhotoUrlDTO> photoUrlDTOList);
+}

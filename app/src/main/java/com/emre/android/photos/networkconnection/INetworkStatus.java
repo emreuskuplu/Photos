@@ -14,5 +14,13 @@
  *    limitations under the License.
  */
 
-include ':app'
-rootProject.name='Photos'
+package com.emre.android.photos.networkconnection;
+
+import android.content.Context;
+
+/**
+ * @author Emre Üsküplü
+ */
+public interface INetworkStatus {
+    boolean isOnlineNetworkConnection(Context context);
+}

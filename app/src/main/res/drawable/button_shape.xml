@@ -15,15 +15,7 @@
   ~    limitations under the License.
   -->
 
-<resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FC5D5D</color>
-    <color name="photoListBackground">#FFFFFF</color>
-    <color name="photoPageBackground">#000000</color>
-
-    <color name="colorActive">#FC5D5D</color>
-    <color name="colorDeactivate">#000000</color>
-
-    <color name="colorButton">#FC6D6D</color>
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/colorButton" />
+    <corners android:radius="4dp" />
+</shape>

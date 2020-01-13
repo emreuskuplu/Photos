@@ -14,5 +14,18 @@
  *    limitations under the License.
  */
 
-include ':app'
-rootProject.name='Photos'
+package com.emre.android.photos.dataaccessobject;
+
+import com.emre.android.photos.datatransferobject.PhotoUrlDTO;
+
+import java.util.List;
+
+/**
+ * @author Emre Üsküplü
+ *
+ * It gets url list from remote server
+ */
+public interface IPhotoUrlDAO {
+
+    List<PhotoUrlDTO> getPhotoUrlList(String pageNumber);
+}

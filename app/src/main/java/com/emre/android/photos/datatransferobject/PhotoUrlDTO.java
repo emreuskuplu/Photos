@@ -14,5 +14,19 @@
  *    limitations under the License.
  */
 
-include ':app'
-rootProject.name='Photos'
+package com.emre.android.photos.datatransferobject;
+
+/**
+ * @author Emre Üsküplü
+ */
+public class PhotoUrlDTO {
+    private String mPhotoUrl;
+
+    public String getPhotoUrl() {
+        return mPhotoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        mPhotoUrl = photoUrl;
+    }
+}

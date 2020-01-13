@@ -14,5 +14,22 @@
  *    limitations under the License.
  */
 
-include ':app'
-rootProject.name='Photos'
+package com.emre.android.photos.dataaccessobject;
+
+import com.emre.android.photos.datatransferobject.PhotoUrlDTO;
+import com.emre.android.photos.webservice.photo.PhotoUrlRestAPI;
+
+import java.util.List;
+
+/**
+ * @author Emre Üsküplü
+ */
+public class PhotoUrlDAO implements IPhotoUrlDAO {
+
+    @Override
+    public List<PhotoUrlDTO> getPhotoUrlList(String pageNumber) {
+        PhotoUrlRestAPI photoUrlRestAPI = new PhotoUrlRestAPI(pageNumber);
+
+        return photoUrlRestAPI.fetchPhotoUrlList();
+    }
+}

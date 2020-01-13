@@ -14,5 +14,14 @@
  *    limitations under the License.
  */
 
-include ':app'
-rootProject.name='Photos'
+package com.emre.android.photos.preferencemanager;
+
+import android.content.Context;
+
+/**
+ * @author Emre Üsküplü
+ */
+public interface IPhotoListFormat {
+    String getPrefListFormat(Context context);
+    void setPrefUnitsFormat(Context context, String listFormat);
+}
