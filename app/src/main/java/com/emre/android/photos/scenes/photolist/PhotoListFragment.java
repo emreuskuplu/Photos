@@ -124,7 +124,7 @@ public class PhotoListFragment extends Fragment implements IUpdatePhotoUrlList {
         setHasOptionsMenu(true);
 
         int spanCount = getSpanCountDependingScreenWidthDp();
-        mPageNumber = 0;
+
         mIsStartedWorkerThread = false;
         mGridLayoutManager = new GridLayoutManager(getActivity(), spanCount);
         mLinearLayoutManager = new LinearLayoutManager(getActivity());
@@ -285,7 +285,7 @@ public class PhotoListFragment extends Fragment implements IUpdatePhotoUrlList {
     }
 
     private void updatePhotoListLayoutManager() {
-        mPageNumber = 0;
+        mPageNumber = 1;
         if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("grid_view")) {
             mPhotoListRecyclerView.setLayoutManager(mGridLayoutManager);
         } else if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("list_view")) {
