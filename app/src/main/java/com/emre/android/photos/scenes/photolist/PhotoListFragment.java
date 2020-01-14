@@ -18,8 +18,11 @@ package com.emre.android.photos.scenes.photolist;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,6 +35,7 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -218,12 +222,61 @@ public class PhotoListFragment extends Fragment implements IUpdatePhotoUrlList {
     }
 
     /**
-     * One total width space of image in grid view list is 119dp
-     * @return span count for grid view list
+     * The width of an image in grid view list is 115dp and it's start and end margins is 2 dp
+     * @return span count based footprint of image view
      */
     private int getSpanCountDependingScreenWidthDp() {
         Configuration configuration = getResources().getConfiguration();
-        return configuration.screenWidthDp / 119;
+        float itemImageViewWidthPx = getResources().getDimension(R.dimen.item_photo_grid_view_width);
+
+        return configuration.screenWidthDp / (getItemImageWidthDp(itemImageViewWidthPx) + 4);
+    }
+
+    private int getItemImageWidthDp(float itemImageViewWidthPx) {
+        DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
+        float itemImageViewWidthDp = itemImageViewWidthPx / (displayMetrics.densityDpi / 160f);
+
+        return (int) itemImageViewWidthDp;
+    }
+
+    /**
+     * @return list item width as pixel
+     */
+    private int getListItemWidth() {
+        int imageWidthPx = 0;
+
+        if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("grid_view")) {
+            imageWidthPx = getResources().getDimensionPixelSize(R.dimen.item_photo_grid_view_width);
+
+        } else if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("list_view")) {
+            DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
+            imageWidthPx = displayMetrics.widthPixels;
+
+        } else {
+            Log.e(TAG, "List format preference is not found.");
+        }
+
+
+        return imageWidthPx;
+    }
+
+    /**
+     * @return list item height as pixel
+     */
+    private int getListItemHeight() {
+        int imageHeightPx = 0;
+
+        if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("grid_view")) {
+            imageHeightPx = getResources().getDimensionPixelSize(R.dimen.item_photo_grid_view_height);
+
+        } else if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("list_view")) {
+            imageHeightPx = getResources().getDimensionPixelSize(R.dimen.item_photo_list_view_height);
+
+        } else {
+            Log.e(TAG, "List format preference is not found.");
+        }
+
+        return imageHeightPx;
     }
 
     private void setupPhotoListAdapter() {
@@ -237,6 +290,8 @@ public class PhotoListFragment extends Fragment implements IUpdatePhotoUrlList {
             mPhotoListRecyclerView.setLayoutManager(mGridLayoutManager);
         } else if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("list_view")) {
             mPhotoListRecyclerView.setLayoutManager(mLinearLayoutManager);
+        } else {
+            Log.e(TAG, "List format preference is not found.");
         }
 
     }
@@ -268,6 +323,8 @@ public class PhotoListFragment extends Fragment implements IUpdatePhotoUrlList {
                 mPhotoImage = itemView.findViewById(R.id.item_photo_grid_view);
             } else if (mIPhotoListFormat.getPrefListFormat(getContext()).equals("list_view")) {
                 mPhotoImage = itemView.findViewById(R.id.item_photo_list_view);
+            } else {
+                Log.e(TAG, "List format preference is not found.");
             }
         }
 
@@ -306,7 +363,9 @@ public class PhotoListFragment extends Fragment implements IUpdatePhotoUrlList {
             String photoUrl = mPhotoUrlDTOList.get(position).getPhotoUrl();
             Glide.with(requireActivity())
                     .load(photoUrl)
+                    .placeholder(new ColorDrawable(ContextCompat.getColor(requireActivity(), R.color.colorItemPhotoPlaceholder)))
                     .centerCrop()
+                    .override(getListItemWidth(), getListItemHeight())
                     .into(holder.mPhotoImage);
         }
 
