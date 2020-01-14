@@ -21,9 +21,8 @@
     <color name="colorAccent">#FC5D5D</color>
     <color name="photoListBackground">#FFFFFF</color>
     <color name="photoPageBackground">#000000</color>
-
     <color name="colorActive">#FC5D5D</color>
     <color name="colorDeactivate">#000000</color>
-
     <color name="colorButton">#FC6D6D</color>
+    <color name="colorItemPhotoPlaceholder">#CCCCCC</color>
 </resources>
