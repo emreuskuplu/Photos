@@ -3,7 +3,7 @@
 It is a project for getting pictures from Flickr service.
 It supports English and Turkish languages.
 
-**UI Design**: https://scene.zeplin.io/project/5db9572a6f4878555f5634ca
+**UI Design**: https://scene.zeplin.io/project/60994b9cf3825b10dfd1726a
 
 **Architectural Design Pattern**: MVC
 
